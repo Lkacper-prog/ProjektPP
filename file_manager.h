@@ -1,0 +1,5 @@
+
+#ifndef PROJEKTPP_FILE_MANAGER_H
+#define PROJEKTPP_FILE_MANAGER_H
+
+#endif
