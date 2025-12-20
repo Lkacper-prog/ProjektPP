@@ -4,7 +4,10 @@ project(ProjektPP C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(ProjektPP main.c
-        dino.h
         file_manager.h
         utils.h
+        dino.c
+        dino.h
+        file_manager.c
+        utils.c
 )
