@@ -1,5 +1,5 @@
 
-#ifndef PROJEKTPP_UTILS_H
-#define PROJEKTPP_UTILS_H
+#ifndef UTILS_H
+#define UTILS_H
 
 #endif

@@ -1,7 +1,7 @@
-#ifndef PROJEKTPP_DINO_H
-#define PROJEKTPP_DINO_H
+#ifndef DINO_H
+#define DINO_H
 
-enum dieta {
+ enum dieta {
     miesozerny,
     roslinozerny,
     wszystkozerny
@@ -22,7 +22,7 @@ enum status_bezpieczenstwa {
 };
 
 typedef struct Dino {
-    char gatunek[101];
+    char gatunek[101]; // zostawiam jedno miejsce na znak koncowy
     enum dieta dieta;
     float masa;
     char zagroda[40];
