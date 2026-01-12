@@ -1,5 +1,4 @@
 #include "dino.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -14,7 +13,6 @@ const char* dieta_na_napis(enum dieta d) {
         return "Nieznana";
     }
 }
-
 const char* temperament_na_napis(enum temperament t) {
     if (t == spokojny) {
         return "Spokojny";
@@ -28,7 +26,6 @@ const char* temperament_na_napis(enum temperament t) {
         return "Nieznany";
     }
 }
-
 const char* status_na_napis(enum status_bezpieczenstwa s) {
     if (s == bezpieczny) {
         return "Bezpieczny";
@@ -47,10 +44,19 @@ const char* status_na_napis(enum status_bezpieczenstwa s) {
 
 
 void dodaj_dinozaura(Node** glowa,Dino dane) {
-
+    Node* nowe_miejsce_na_dino  =malloc(sizeof(Node));
+    nowe_miejsce_na_dino->dane=dane;
+    nowe_miejsce_na_dino->nastepny = NULL;
+    if (*glowa == NULL) {
+        *glowa=nowe_miejsce_na_dino;
+    } else {
+        Node* obecny = *glowa;
+        while (obecny->nastepny != NULL) {
+            obecny = obecny->nastepny;
+        }
+        obecny->nastepny = nowe_miejsce_na_dino;
+    }
 }
-
-
 
 void wyswietl_liste(Node* glowa) {
         Node* obecny = glowa;
@@ -78,14 +84,9 @@ void wyswietl_liste(Node* glowa) {
     }
 }
 
-
-
 void usun_dinozaura(Node** glowa, int indeks_lub_kryterium) {
 
 }
-
-
-
 
 void zwolnij_liste(Node** glowa) {
     Node* obecny = *glowa;
