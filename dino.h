@@ -22,7 +22,7 @@ enum status_bezpieczenstwa {
 };
 
 typedef struct Dino {
-    char gatunek[101]; // zostawiam jedno miejsce na znak koncowy
+    char gatunek[101];
     enum dieta dieta;
     float masa;
     char zagroda[40];
@@ -35,8 +35,8 @@ typedef struct Node {
     struct Node* nastepny;
 }Node;
 
-void dodaj_dinozaura(Node** head,Dino dane);
-void wyswietl_liste(Node* head);
+void dodaj_dinozaura(Node** glowa,Dino dane);
+void wyswietl_liste(Node* glowa);
 void usun_dinozaura(Node** glowa, int indeks_lub_kryterium);
 void zwolnij_liste(Node** glowa);
 #endif
