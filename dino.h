@@ -1,7 +1,7 @@
 #ifndef DINO_H
 #define DINO_H
 
- enum dieta {
+enum dieta {
     miesozerny,
     roslinozerny,
     wszystkozerny
@@ -13,6 +13,7 @@ enum temperament {
     agresywny,
     nieprzewidywalny
 };
+
 enum status_bezpieczenstwa {
     bezpieczny,
     pod_obserwacja,
@@ -28,15 +29,20 @@ typedef struct Dino {
     char zagroda[40];
     enum temperament temperament;
     enum status_bezpieczenstwa status_bezpieczenstwa;
+} Dino;
 
-}Dino;
 typedef struct Node {
     Dino dane;
-    struct Node* nastepny;
-}Node;
+    struct Node *nastepny;
+} Node;
 
-void dodaj_dinozaura(Node** glowa,Dino dane);
-void wyswietl_liste(Node* glowa);
-void usun_dinozaura(Node** glowa, int indeks_lub_kryterium);
-void zwolnij_liste(Node** glowa);
+void dodaj_dinozaura(Node **glowa, Dino dane);
+
+void wyswietl_liste(Node *glowa);
+
+void usun_dinozaura(Node **glowa);
+
+void usun_dinozaury(Node **glowa);
+
+void zwolnij_liste(Node **glowa);
 #endif
