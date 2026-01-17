@@ -1,5 +1,6 @@
 #ifndef UTILS_H
 #define UTILS_H
+#include "dino.h"
 
 int pobieranie_opcji_usuwania();
 
@@ -15,4 +16,9 @@ double pobieranie_masy();
 
 char *pobieranie_stringa_zagroda();
 
+void wyswietl_menu();
+
+int pobieranie_opcji_menu();
+
+Dino pobierz_dane_dinozaur();
 #endif

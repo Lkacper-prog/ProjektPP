@@ -40,10 +40,18 @@ void dodaj_dinozaura(Node **glowa, Dino dane);
 
 void wyswietl_liste(Node *glowa);
 
-void usun_dinozaura(Node **glowa);
+void usun_dinozaura(Node **glowa);// dorobic sprawdzanie enuma status_bezpieczenstwa
 
-void usun_dinozaury(Node **glowa);
+void usun_dinozaury(Node **glowa);// to samo
 
 void zwolnij_liste(Node **glowa);
+
+void znajdz_dinozaura(Node **glowa);
+
+void edytuj_dinozaura(Node **glowa);// do zrobienia
+
+void sortuj_dinozaury(Node **glowa);// do zrobienia
+
+void wyszukaj_dinozaury(Node *glowa); // do zrobienia
 
 #endif
