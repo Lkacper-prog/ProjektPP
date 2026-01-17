@@ -25,8 +25,8 @@ enum status_bezpieczenstwa {
 typedef struct Dino {
     char gatunek[101];
     enum dieta dieta;
-    float masa;
-    char zagroda[40];
+    double masa;
+    char zagroda[41];
     enum temperament temperament;
     enum status_bezpieczenstwa status_bezpieczenstwa;
 } Dino;
@@ -45,4 +45,6 @@ void usun_dinozaura(Node **glowa);
 void usun_dinozaury(Node **glowa);
 
 void zwolnij_liste(Node **glowa);
+
+void usun_dinozaury(Node **glowa);
 #endif

@@ -11,7 +11,7 @@ int pobieranie_enuma_statusbezpieczesntwa();
 
 char *pobieranie_stringa_gatunek();
 
-float pobieranie_masy();
+double pobieranie_masy();
 
 char *pobieranie_stringa_zagroda();
 

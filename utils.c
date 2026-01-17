@@ -89,10 +89,10 @@ char *pobieranie_stringa_gatunek() {
     return napis;
 }
 
-float pobieranie_masy() {
-    float masa;
+double pobieranie_masy() {
+    double masa;
     printf("podaj masę ");
-    while (scanf("%f", &masa) != 1) {
+    while (scanf("%lf", &masa) != 1) {
         printf("podaj ponowonie liczbę");
         while (getchar() != '\n');
     };
@@ -100,7 +100,7 @@ float pobieranie_masy() {
 }
 
 char *pobieranie_stringa_zagroda() {
-    char *napis = malloc(40 * sizeof(char));
+    char *napis = malloc(41 * sizeof(char));
     if (napis == NULL) {
         printf("Błąd pamięci!\n");
     }
