@@ -56,7 +56,7 @@ void usuwanie_dinozaura_gatunek(Node **glowa, char gatunek[101]) {
     if (strcmp(obecny->dane.gatunek, gatunek) == 0) {
         *glowa = obecny->nastepny;
         free(obecny);
-        printf("usnięto pierwszy element");
+        printf("usnieto pierwszy element\n");
         return;
     }
     wczesniejszy = obecny;
@@ -65,7 +65,7 @@ void usuwanie_dinozaura_gatunek(Node **glowa, char gatunek[101]) {
         if (strcmp(obecny->dane.gatunek, gatunek) == 0) {
             wczesniejszy->nastepny = obecny->nastepny;
             free(obecny);
-            printf("usunięto element ze środka");
+            printf("usunieto element ze srodka\n");
             break;
         }
         wczesniejszy = obecny;
@@ -83,7 +83,7 @@ void usuwanie_dinozaura_dieta(Node **glowa, enum dieta dieta) {
     if (obecny->dane.dieta == dieta) {
         *glowa = obecny->nastepny;
         free(obecny);
-        printf("usnięto pierwszy element");
+        printf("usnieto pierwszy element\n");
         return;
     }
     wczesniejszy = obecny;
@@ -92,7 +92,7 @@ void usuwanie_dinozaura_dieta(Node **glowa, enum dieta dieta) {
         if (obecny->dane.dieta == dieta) {
             wczesniejszy->nastepny = obecny->nastepny;
             free(obecny);
-            printf("usunięto element ze środka");
+            printf("usunieto element ze srodka\n");
             break;
         }
         wczesniejszy = obecny;
@@ -110,7 +110,7 @@ void usuwanie_dinozaura_masa(Node **glowa, double masa) {
     if (obecny->dane.masa == masa) {
         *glowa = obecny->nastepny;
         free(obecny);
-        printf("usnięto pierwszy element");
+        printf("usnieto pierwszy element\n");
         return;
     }
     wczesniejszy = obecny;
@@ -119,7 +119,7 @@ void usuwanie_dinozaura_masa(Node **glowa, double masa) {
         if (obecny->dane.masa == masa) {
             wczesniejszy->nastepny = obecny->nastepny;
             free(obecny);
-            printf("usunięto element ze środka");
+            printf("usunieto element ze środka\n");
             break;
         }
         wczesniejszy = obecny;
@@ -137,7 +137,7 @@ void usuwanie_dinozaura_zagroda(Node **glowa, char zagroda[41]) {
     if (strcmp(obecny->dane.zagroda, zagroda) == 0) {
         *glowa = obecny->nastepny;
         free(obecny);
-        printf("usnięto pierwszy element");
+        printf("usnieto pierwszy element\n");
         return;
     }
     wczesniejszy = obecny;
@@ -146,7 +146,7 @@ void usuwanie_dinozaura_zagroda(Node **glowa, char zagroda[41]) {
         if (strcmp(obecny->dane.zagroda, zagroda) == 0) {
             wczesniejszy->nastepny = obecny->nastepny;
             free(obecny);
-            printf("usunięto element ze środka");
+            printf("usunieto element ze srodka\n");
             break;
         }
         wczesniejszy = obecny;
@@ -164,7 +164,7 @@ void usuwanie_dinozaura_temperament(Node **glowa, enum temperament temperament) 
     if (obecny->dane.temperament == temperament) {
         *glowa = obecny->nastepny;
         free(obecny);
-        printf("usnięto pierwszy element");
+        printf("usnieto pierwszy element\n");
         return;
     }
     wczesniejszy = obecny;
@@ -173,7 +173,7 @@ void usuwanie_dinozaura_temperament(Node **glowa, enum temperament temperament) 
         if (obecny->dane.temperament == temperament) {
             wczesniejszy->nastepny = obecny->nastepny;
             free(obecny);
-            printf("usunięto element ze środka");
+            printf("usunieto element ze środka\n");
             break;
         }
         wczesniejszy = obecny;
@@ -194,7 +194,7 @@ void usuwanie_dinozaurow_gatunek(Node **glowa, char gatunek[101]) {
         ilosc_usunietych++;
     }
     if (*glowa == NULL) {
-        printf("usunięto %d elementów\n", ilosc_usunietych);
+        printf("usunieto %d elementow\n", ilosc_usunietych);
         return;
     }
     Node *wczesniejszy = *glowa;
@@ -212,7 +212,7 @@ void usuwanie_dinozaurow_gatunek(Node **glowa, char gatunek[101]) {
             obecny = obecny->nastepny;
         }
     }
-    printf("usunięto %d elementów\n", ilosc_usunietych);
+    printf("usunieto %d elementow\n", ilosc_usunietych);
 }
 
 void usuwanie_dinozaurow_dieta(Node **glowa, enum dieta dieta) {
@@ -228,7 +228,7 @@ void usuwanie_dinozaurow_dieta(Node **glowa, enum dieta dieta) {
         ilosc_usunietych++;
     }
     if (*glowa == NULL) {
-        printf("usunięto %d elementów\n", ilosc_usunietych);
+        printf("usunieto %d elementow\n", ilosc_usunietych);
         return;
     }
     Node *wczesniejszy = *glowa;
@@ -246,7 +246,7 @@ void usuwanie_dinozaurow_dieta(Node **glowa, enum dieta dieta) {
             obecny = obecny->nastepny;
         }
     }
-    printf("usunięto %d elementów\n", ilosc_usunietych);
+    printf("usunieto %d elementow\n", ilosc_usunietych);
 }
 
 void usuwanie_dinozaurow_masa(Node **glowa, double masa) {
@@ -262,7 +262,7 @@ void usuwanie_dinozaurow_masa(Node **glowa, double masa) {
         ilosc_usunietych++;
     }
     if (*glowa == NULL) {
-        printf("usunięto %d elementów \n", ilosc_usunietych);
+        printf("usunieto %d elementow \n", ilosc_usunietych);
         return;
     }
     Node *wczesniejszy = *glowa;
@@ -280,7 +280,7 @@ void usuwanie_dinozaurow_masa(Node **glowa, double masa) {
             obecny = obecny->nastepny;
         }
     }
-    printf("usunięto %d elementów \n", ilosc_usunietych);
+    printf("usunieto %d elementow \n", ilosc_usunietych);
 }
 
 void usuwanie_dinozaurow_zagroda(Node **glowa, char zagroda[41]) {
@@ -296,7 +296,7 @@ void usuwanie_dinozaurow_zagroda(Node **glowa, char zagroda[41]) {
         ilosc_usunietych++;
     }
     if (*glowa == NULL) {
-        printf("usunięto %d elementów\n", ilosc_usunietych);
+        printf("usunieto %d elementew\n", ilosc_usunietych);
         return;
     }
     Node *wczesniejszy = *glowa;
@@ -314,7 +314,7 @@ void usuwanie_dinozaurow_zagroda(Node **glowa, char zagroda[41]) {
             obecny = obecny->nastepny;
         }
     }
-    printf("usunięto %d elementów\n", ilosc_usunietych);
+    printf("usunieto %d elementew\n", ilosc_usunietych);
 }
 
 void usuwanie_dinozaurow_temperament(Node **glowa, enum temperament temperament) {
@@ -330,7 +330,7 @@ void usuwanie_dinozaurow_temperament(Node **glowa, enum temperament temperament)
         ilosc_usunietych++;
     }
     if (*glowa == NULL) {
-        printf("usunięto %d elementów\n", ilosc_usunietych);
+        printf("usunieto %d elementow\n", ilosc_usunietych);
         return;
     }
     Node *wczesniejszy = *glowa;
@@ -348,8 +348,79 @@ void usuwanie_dinozaurow_temperament(Node **glowa, enum temperament temperament)
             obecny = obecny->nastepny;
         }
     }
-    printf("usunięto %d elementów\n", ilosc_usunietych);
+    printf("usunieto %d elementow\n", ilosc_usunietych);
 }
+
+void wyszukaj_dinozaury_masa(Node *glowa, double masa) {
+    Node *obecny = glowa;
+    int znaleziono = 0;
+
+    if (obecny == NULL) {
+        printf("Lista jest pusta, nie ma czego szukac.\n");
+        return;
+    }
+
+    printf("--- Wyniki wyszukiwania dla masy: %.2lf ---\n", masa);
+
+    while (obecny != NULL) {
+        if (obecny->dane.masa == masa) {
+            const char *dieta = dieta_na_napis(obecny->dane.dieta);
+            const char *temperament = temperament_na_napis(obecny->dane.temperament);
+            const char *status = status_na_napis(obecny->dane.status_bezpieczenstwa);
+
+            printf("Gatunek: %s\n", obecny->dane.gatunek);
+            printf(" Dieta: %s\n", dieta);
+            printf(" Masa: %.2lf\n", obecny->dane.masa);
+            printf(" Zagroda: %s\n", obecny->dane.zagroda);
+            printf(" Temperament: %s\n", temperament);
+            printf(" Status: %s\n", status);
+            printf("------------------------\n");
+
+            znaleziono = 1;
+        }
+        obecny = obecny->nastepny;
+    }
+
+    if (!znaleziono) {
+        printf("Nie znaleziono zadnego dinozaura o podanej masie.\n");
+    }
+}
+
+void wyszukaj_dinozaury_gatunek(Node *glowa, char gatunek[101]) {
+    Node *obecny = glowa;
+    int znaleziono = 0;
+
+    if (obecny == NULL) {
+        printf("Lista jest pusta, nie ma czego szukac.\n");
+        return;
+    }
+
+    printf("--- Wyniki wyszukiwania dla stringa: %s ---\n", gatunek);
+
+    while (obecny != NULL) {
+        if (strstr(obecny->dane.gatunek, gatunek) != NULL) {
+            const char *dieta = dieta_na_napis(obecny->dane.dieta);
+            const char *temperament = temperament_na_napis(obecny->dane.temperament);
+            const char *status = status_na_napis(obecny->dane.status_bezpieczenstwa);
+
+            printf("Gatunek: %s\n", obecny->dane.gatunek);
+            printf(" Dieta: %s\n", dieta);
+            printf(" Masa: %.2lf\n", obecny->dane.masa);
+            printf(" Zagroda: %s\n", obecny->dane.zagroda);
+            printf(" Temperament: %s\n", temperament);
+            printf(" Status: %s\n", status);
+            printf("------------------------\n");
+
+            znaleziono = 1;
+        }
+        obecny = obecny->nastepny;
+    }
+
+    if (!znaleziono) {
+        printf("Nie znaleziono dinozaura pasującego do nazwy %s.\n", gatunek);
+    }
+}
+
 
 void dodaj_dinozaura(Node **glowa, Dino dane) {
     Node *nowe_miejsce_na_dino = malloc(sizeof(Node));
@@ -397,6 +468,10 @@ void usun_dinozaura(Node **glowa) {
     switch (kryterium) {
         case 0: {
             char *string = pobieranie_stringa_gatunek();
+            if (string == NULL) {
+                printf("nie udalo sie pobrac stringa");
+                break;
+            }
             usuwanie_dinozaura_gatunek(glowa, string);
             free(string);
             break;
@@ -413,6 +488,10 @@ void usun_dinozaura(Node **glowa) {
         }
         case 3: {
             char *string = pobieranie_stringa_zagroda();
+            if (string == NULL) {
+                printf("nie udalo sie pobrac stringa");
+                break;
+            }
             usuwanie_dinozaura_zagroda(glowa, string);
             free(string);
             break;
@@ -422,6 +501,9 @@ void usun_dinozaura(Node **glowa) {
             usuwanie_dinozaura_temperament(glowa, temperament);
             break;
         }
+        default:
+            printf("nie udalo sie wykonac");
+            break;
     }
 }
 
@@ -445,6 +527,10 @@ void usun_dinozaury(Node **glowa) {
     switch (kryterium) {
         case 0: {
             char *string = pobieranie_stringa_gatunek();
+            if (string == NULL) {
+                printf("nie udalo sie pobrac stringa");
+                break;
+            }
             usuwanie_dinozaurow_gatunek(glowa, string);
             free(string);
             break;
@@ -461,6 +547,10 @@ void usun_dinozaury(Node **glowa) {
         }
         case 3: {
             char *string = pobieranie_stringa_zagroda();
+            if (string== NULL) {
+                printf("nie udalo sie pobrac stringa");
+                break;
+            }
             usuwanie_dinozaurow_zagroda(glowa, string);
             free(string);
             break;
@@ -468,6 +558,45 @@ void usun_dinozaury(Node **glowa) {
         case 4: {
             enum temperament temperament = pobieranie_enuma_temperament();
             usuwanie_dinozaurow_temperament(glowa, temperament);
+            break;
+        default:
+            printf("nie udalo sie wykonac");
+            break;
+        }
+    }
+}
+
+
+void edytuj_dinozaura(Node **glowa) {
+}
+
+void sortuj_dinozaury(Node **glowa) {
+    printf("brak");
+}
+
+void wyszukaj_dinozaury(Node *glowa) {
+    printf("Po czym chcesz wyszukac dinozaura ?\n"
+        "0: gatunek\n"
+        "1: masa\n");
+    int opcja = pobieranie_opcji_wyszukaj_dinozaura();
+    switch (opcja) {
+        case 1: {
+            double masa = pobieranie_masy();
+            wyszukaj_dinozaury_masa(glowa, masa);
+            break;
+        }
+        case 0: {
+            char *gatunek= pobieranie_stringa_gatunek();
+            if (gatunek == NULL) {
+                printf("nie udalo sie pobrac stringa");
+                break;
+            }
+            wyszukaj_dinozaury_gatunek(glowa, gatunek);
+            free(gatunek);
+            break;
+        }
+        default: {
+            printf("nie udalo sie wykonac");
             break;
         }
     }

@@ -4,7 +4,7 @@
 #include "dino.h"
 
 
-void wczytaj_liste_plik(Node **glowa,char plik[100]) {
+void wczytaj_liste_plik(Node **glowa, char plik[100]) {
     FILE *otwarty_plik = fopen(plik, "r");
     if (otwarty_plik == NULL) {
         printf("Plik się nie otworzył lub nie istnieje\n");
@@ -33,7 +33,7 @@ void wczytaj_liste_plik(Node **glowa,char plik[100]) {
 }
 
 
-void zapisz_liste(Node *glowa,char plik[100]) {
+void zapisz_liste(Node *glowa, char plik[100]) {
     FILE *otwarty_plik = fopen(plik, "w");
     if (otwarty_plik == NULL) {
         printf("pliku nie można otworzzyć");

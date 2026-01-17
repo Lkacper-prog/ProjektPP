@@ -8,7 +8,7 @@ int pobieranie_opcji_usuwania() {
     int opcja;
     int petla = 1;
     while (petla != 0) {
-        printf("Wybierz opcję usuwania:\n"
+        printf("Wybierz opcje usuwania:\n"
             " 0: Gatunek\n"
             " 1: Dieta\n"
             " 2: Masa\n"
@@ -20,10 +20,10 @@ int pobieranie_opcji_usuwania() {
             if (opcja >= 0 && opcja <= 4) {
                 return opcja;
             } else {
-                printf("Błąd: Wybierz liczbę od 0 do 4!\n");
+                printf("Blad: Wybierz liczbe od 0 do 4!\n");
             }
         } else {
-            printf("Błąd: To nie jest liczba!\n");
+            printf("Blad: To nie jest liczba!\n");
             while (getchar() != '\n');
         }
         printf("\n");
@@ -35,13 +35,31 @@ int pobieranie_opcji_menu() {
     int petla = 1;
     while (petla != 0) {
         if (scanf("%d", &opcja) == 1) {
-            if (opcja >= 0 && opcja <= 9) {
+            if (opcja >= 0 && opcja <= 10) {
                 return opcja;
-            } else{
-                printf("Błąd: Wybierz liczbę od 0 do 9!\n");
+            } else {
+                printf("Blad: Wybierz liczbe od 0 do 10!\n");
             }
         } else {
-            printf("Błąd: To nie jest liczba!\n");
+            printf("Blad: To nie jest liczba!\n");
+            while (getchar() != '\n');
+        }
+        printf("\n");
+    }
+}
+
+int pobieranie_opcji_wyszukaj_dinozaura() {
+    int opcja;
+    int petla = 1;
+    while (petla != 0) {
+        if (scanf("%d", &opcja) == 1) {
+            if (opcja >= 0 && opcja <= 5) {
+                return opcja;
+            } else {
+                printf("Blad: Wybierz liczbe od 0 do 5!\n");
+            }
+        } else {
+            printf("Blad: To nie jest liczba!\n");
             while (getchar() != '\n');
         }
         printf("\n");
@@ -52,20 +70,20 @@ int pobieranie_enuma_dieta() {
     int opcja;
     int petla = 1;
     while (petla != 0) {
-        printf("Wybierz dietę:\n"
-            " 0: Mięsożerny\n"
-            " 1: Roślinożerny\n"
-            " 2: Wszystkożerny\n"
-            "Wybor: ");
+        printf("Wybierz diete:\n"
+            " 0: Miesozerny\n"
+            " 1: Roslinozerny\n"
+            " 2: Wszystkozerny\n"
+            "Wybor: \n");
 
         if (scanf("%d", &opcja) == 1) {
             if (opcja >= 0 && opcja <= 2) {
                 return opcja;
             } else {
-                printf("Błąd: Wybierz liczbę od 0 do 2!\n");
+                printf("Bląd: Wybierz liczbę od 0 do 2!\n");
             }
         } else {
-            printf("Błąd: To nie jest liczba!\n");
+            printf("Bląd: To nie jest liczba!\n");
             while (getchar() != '\n');
         }
         printf("\n");
@@ -87,10 +105,10 @@ int pobieranie_enuma_temperament() {
             if (opcja >= 0 && opcja <= 3) {
                 return opcja;
             } else {
-                printf("Błąd: Wybierz liczbę od 0 do 3!\n");
+                printf("Blad: Wybierz liczbe od 0 do 3!\n");
             }
         } else {
-            printf("Błąd: To nie jest liczba!\n");
+            printf("Blad: To nie jest liczba!\n");
             while (getchar() != '\n');
         }
         printf("\n");
@@ -113,10 +131,10 @@ int pobieranie_enuma_status_bezpieczenstwa() {
             if (opcja >= 0 && opcja <= 4) {
                 return opcja;
             } else {
-                printf("Błąd: Wybierz liczbę od 0 do 4!\n");
+                printf("Blad: Wybierz liczbe od 0 do 4!\n");
             }
         } else {
-            printf("Błąd: To nie jest liczba!\n");
+            printf("Blad: To nie jest liczba!\n");
             while (getchar() != '\n');
         }
         printf("\n");
@@ -126,10 +144,10 @@ int pobieranie_enuma_status_bezpieczenstwa() {
 char *pobieranie_stringa_gatunek() {
     char *napis = malloc(101 * sizeof(char));
     if (napis == NULL) {
-        printf("BŁĄD: Nie udało się przydzielić pamięci.\n");
+        printf("BLAD: Nie udalo się przydzielic pamieci.\n");
         return NULL;
     }
-    printf("Podaj nazwę: ");
+    printf("Podaj nazwe: ");
     scanf(" %100[^\n]", napis);
 
     return napis;
@@ -137,9 +155,9 @@ char *pobieranie_stringa_gatunek() {
 
 double pobieranie_masy() {
     double masa;
-    printf("podaj masę ");
-    while (scanf("%.2lf", &masa) != 1) {
-        printf("podaj ponowonie liczbę");
+    printf("podaj mase \n");
+    while (scanf("%lf", &masa) != 1) {
+        printf("podaj ponowonie liczbe\n");
         while (getchar() != '\n');
     };
     return masa;
@@ -148,10 +166,10 @@ double pobieranie_masy() {
 char *pobieranie_stringa_zagroda() {
     char *napis = malloc(41 * sizeof(char));
     if (napis == NULL) {
-        printf("BŁĄD: Nie udało się przydzielić pamięci\n");
+        printf("BLAD: Nie udalo się przydzielic pamieci\n");
         return NULL;
     }
-    printf("Podaj nazwę: ");
+    printf("Podaj nazwe zagrody: ");
     scanf(" %40[^\n]", napis);
 
     return napis;
@@ -159,26 +177,26 @@ char *pobieranie_stringa_zagroda() {
 
 void wyswietl_menu() {
     printf("----------------\n");
-    printf(" System Zarządzania Parkiem Dinozaurów\n");
+    printf(" System Zarzadzania Parkiem Dinozaurow\n");
     printf("----------------\n");
     printf("opcje:\n"
         "0: Wczytaj Dinozaury z pliku\n"
         "1: Dodaj Dinozaura \n"
-        "2: usuń dinozaura\n"
-        "3: usuń dinozaury\n"
+        "2: usun dinozaura\n"
+        "3: usun dinozaury\n"
         "4: wyszukaj dinozaury\n"
         "5: wyswietl liste\n"
         "6: edytuj dinozaura\n"
         "7: posortuj dinozaury\n"
         "8: zapisz dinozaury do pliku\n"
-        "9: usuń wszystkie dane dinozaurow\n"
-        "10: zakończ działanie programu");
+        "9: usun wszystkie dane dinozaurow\n"
+        "10: zakoncz dziananie programu\n");
 }
 
 Dino pobierz_dane_dinozaur() {
     Dino dino;
     char *gatunek = NULL;
-    char *zagroda= NULL;
+    char *zagroda = NULL;
     printf("podaj gatunek dinozaura:\n");
     while (gatunek == NULL) {
         gatunek = pobieranie_stringa_gatunek();
@@ -196,4 +214,3 @@ Dino pobierz_dane_dinozaur() {
     dino.status_bezpieczenstwa = pobieranie_enuma_status_bezpieczenstwa();
     return dino;
 }
-

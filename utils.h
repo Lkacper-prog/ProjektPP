@@ -21,4 +21,6 @@ void wyswietl_menu();
 int pobieranie_opcji_menu();
 
 Dino pobierz_dane_dinozaur();
+
+int pobieranie_opcji_wyszukaj_dinozaura();
 #endif
