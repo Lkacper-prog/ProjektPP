@@ -119,7 +119,7 @@ int pobieranie_enuma_status_bezpieczenstwa() {
     int opcja;
     int petla = 1;
     while (petla != 0) {
-        printf("Wybierz temperament:\n"
+        printf("Wybierz status bezpiecznstwa:\n"
             " 0: bezpieczny\n"
             " 1: pod_obserwacja\n"
             " 2: awaryjny_kwarantanna\n"

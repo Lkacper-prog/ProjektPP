@@ -53,7 +53,7 @@ void usuwanie_dinozaura_gatunek(Node **glowa, char gatunek[101]) {
     }
     Node *wczesniejszy = NULL;
     Node *obecny = *glowa;
-    if (strcmp(obecny->dane.gatunek, gatunek) == 0 && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    if (strcmp(obecny->dane.gatunek, gatunek) == 0 && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= zagrozenie)) {
         *glowa = obecny->nastepny;
         free(obecny);
         printf("usnieto pierwszy element\n");
@@ -63,7 +63,7 @@ void usuwanie_dinozaura_gatunek(Node **glowa, char gatunek[101]) {
     obecny = obecny->nastepny;
     while (obecny != NULL) {
         if (strcmp(obecny->dane.gatunek, gatunek) == 0) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -85,7 +85,7 @@ void usuwanie_dinozaura_dieta(Node **glowa, enum dieta dieta) {
     }
     Node *wczesniejszy = NULL;
     Node *obecny = *glowa;
-    if (obecny->dane.dieta == dieta && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    if (obecny->dane.dieta == dieta && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= zagrozenie)) {
         *glowa = obecny->nastepny;
         free(obecny);
         printf("usnieto pierwszy element\n");
@@ -95,7 +95,7 @@ void usuwanie_dinozaura_dieta(Node **glowa, enum dieta dieta) {
     obecny = obecny->nastepny;
     while (obecny != NULL) {
         if (obecny->dane.dieta == dieta) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -117,7 +117,7 @@ void usuwanie_dinozaura_masa(Node **glowa, double masa) {
     }
     Node *wczesniejszy = NULL;
     Node *obecny = *glowa;
-    if (obecny->dane.masa == masa && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    if (obecny->dane.masa == masa && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= zagrozenie)) {
         *glowa = obecny->nastepny;
         free(obecny);
         printf("usnieto pierwszy element\n");
@@ -127,7 +127,7 @@ void usuwanie_dinozaura_masa(Node **glowa, double masa) {
     obecny = obecny->nastepny;
     while (obecny != NULL) {
         if (obecny->dane.masa == masa) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -149,7 +149,7 @@ void usuwanie_dinozaura_zagroda(Node **glowa, char zagroda[41]) {
     }
     Node *wczesniejszy = NULL;
     Node *obecny = *glowa;
-    if (strcmp(obecny->dane.zagroda, zagroda ) == 0 && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    if (strcmp(obecny->dane.zagroda, zagroda ) == 0 && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= zagrozenie)) {
         *glowa = obecny->nastepny;
         free(obecny);
         printf("usnieto pierwszy element\n");
@@ -159,7 +159,7 @@ void usuwanie_dinozaura_zagroda(Node **glowa, char zagroda[41]) {
     obecny = obecny->nastepny;
     while (obecny != NULL) {
         if (strcmp(obecny->dane.zagroda, zagroda) == 0) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -181,7 +181,7 @@ void usuwanie_dinozaura_temperament(Node **glowa, enum temperament temperament) 
     }
     Node *wczesniejszy = NULL;
     Node *obecny = *glowa;
-    if (obecny->dane.temperament == temperament && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    if (obecny->dane.temperament == temperament && (obecny->dane.status_bezpieczenstwa!= ucieczka && obecny->dane.status_bezpieczenstwa!= zagrozenie)) {
         *glowa = obecny->nastepny;
         free(obecny);
         printf("usnieto pierwszy element\n");
@@ -191,7 +191,7 @@ void usuwanie_dinozaura_temperament(Node **glowa, enum temperament temperament) 
     obecny = obecny->nastepny;
     while (obecny != NULL) {
         if (obecny->dane.temperament == temperament) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -212,7 +212,7 @@ void usuwanie_dinozaurow_gatunek(Node **glowa, char gatunek[101]) {
         printf("Lista jest pusta.\n");
         return;
     }
-    while (*glowa != NULL && strcmp((*glowa)->dane.gatunek, gatunek) == 0 && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    while (*glowa != NULL && strcmp((*glowa)->dane.gatunek, gatunek) == 0 && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= zagrozenie)) {
         Node *do_usuniecia = *glowa;
         *glowa = (*glowa)->nastepny;
         free(do_usuniecia);
@@ -227,7 +227,7 @@ void usuwanie_dinozaurow_gatunek(Node **glowa, char gatunek[101]) {
 
     while (obecny != NULL) {
         if (strcmp(obecny->dane.gatunek, gatunek) == 0) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -251,7 +251,7 @@ void usuwanie_dinozaurow_dieta(Node **glowa, enum dieta dieta) {
         printf("Lista jest pusta.\n");
         return;
     }
-    while (*glowa != NULL && (*glowa)->dane.dieta == dieta && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    while (*glowa != NULL && (*glowa)->dane.dieta == dieta && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= zagrozenie)) {
         Node *do_usuniecia = *glowa;
         *glowa = (*glowa)->nastepny;
         free(do_usuniecia);
@@ -266,7 +266,7 @@ void usuwanie_dinozaurow_dieta(Node **glowa, enum dieta dieta) {
 
     while (obecny != NULL) {
         if (obecny->dane.dieta == dieta) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -290,7 +290,7 @@ void usuwanie_dinozaurow_masa(Node **glowa, double masa) {
         printf("Lista jest pusta.\n");
         return;
     }
-    while (*glowa != NULL && (*glowa)->dane.masa == masa && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    while (*glowa != NULL && (*glowa)->dane.masa == masa && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= zagrozenie)) {
         Node *do_usuniecia = *glowa;
         *glowa = (*glowa)->nastepny;
         free(do_usuniecia);
@@ -305,7 +305,7 @@ void usuwanie_dinozaurow_masa(Node **glowa, double masa) {
 
     while (obecny != NULL) {
         if (obecny->dane.masa == masa) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -329,7 +329,7 @@ void usuwanie_dinozaurow_zagroda(Node **glowa, char zagroda[41]) {
         printf("Lista jest pusta.\n");
         return;
     }
-    while (*glowa != NULL && strcmp((*glowa)->dane.zagroda, zagroda) == 0 && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    while (*glowa != NULL && strcmp((*glowa)->dane.zagroda, zagroda) == 0 && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= zagrozenie)) {
         Node *do_usuniecia = *glowa;
         *glowa = (*glowa)->nastepny;
         free(do_usuniecia);
@@ -344,7 +344,7 @@ void usuwanie_dinozaurow_zagroda(Node **glowa, char zagroda[41]) {
 
     while (obecny != NULL) {
         if (strcmp(obecny->dane.zagroda, zagroda) == 0) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
@@ -368,7 +368,7 @@ void usuwanie_dinozaurow_temperament(Node **glowa, enum temperament temperament)
         printf("Lista jest pusta.\n");
         return;
     }
-    while (*glowa != NULL && (*glowa)->dane.temperament == temperament && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= awaryjna_kwarantanna)) {
+    while (*glowa != NULL && (*glowa)->dane.temperament == temperament && ((*glowa)->dane.status_bezpieczenstwa!= ucieczka && (*glowa)->dane.status_bezpieczenstwa!= zagrozenie)) {
         Node *do_usuniecia = *glowa;
         *glowa = (*glowa)->nastepny;
         free(do_usuniecia);
@@ -383,7 +383,7 @@ void usuwanie_dinozaurow_temperament(Node **glowa, enum temperament temperament)
 
     while (obecny != NULL) {
         if (obecny->dane.temperament == temperament) {
-            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == awaryjna_kwarantanna) {
+            if (obecny->dane.status_bezpieczenstwa == ucieczka || obecny->dane.status_bezpieczenstwa == zagrozenie) {
                 wczesniejszy= obecny;
                 obecny= obecny->nastepny;
                 continue;
