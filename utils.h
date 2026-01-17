@@ -8,7 +8,7 @@ int pobieranie_enuma_dieta();
 
 int pobieranie_enuma_temperament();
 
-int pobieranie_enuma_statusbezpieczesntwa();
+int pobieranie_enuma_status_bezpieczesntwa();
 
 char *pobieranie_stringa_gatunek();
 

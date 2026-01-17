@@ -1,24 +1,23 @@
 #include "file_manager.h"
-
 #include <stdio.h>
 #include <string.h>
-
 #include "dino.h"
 
 
 void wczytaj_liste_plik(Node **glowa) {
-    FILE *plik = fopen("dane.txt", "r");
+    FILE *plik = fopen("dane.csv", "r");
     if (plik == NULL) {
         printf("Plik się nie otworzył lub nie istnieje\n");
         return;
     }
+    zwolnij_liste(glowa);
     char gatunek[101];
     int dieta_int;
     double masa;
     char zagroda[41];
     int temperament_int;
     int status_bezpieczenstwa_int;
-    while (fscanf(plik, "%100s %d %lf %40s %d %d", gatunek, &dieta_int, &masa, zagroda, &temperament_int,
+    while (fscanf(plik, " %100[^,],%d,%lf,%40[^,],%d,%d", gatunek, &dieta_int, &masa, zagroda, &temperament_int,
                   &status_bezpieczenstwa_int) == 6) {
         Dino dino;
         strcpy(dino.gatunek, gatunek);
@@ -35,10 +34,14 @@ void wczytaj_liste_plik(Node **glowa) {
 
 
 void zapisz_liste(Node *glowa) {
-    FILE *plik = fopen("dane.txt", "w");
+    FILE *plik = fopen("dane.csv", "w");
+    if (plik == NULL) {
+        printf("pliku nie można otworzzyć");
+        return;
+    }
     Node *obecny = glowa;
     while (obecny != NULL) {
-        fprintf(plik, "%s %d %lf %s %d %d \n", obecny->dane.gatunek, obecny->dane.dieta, obecny->dane.masa,
+        fprintf(plik, "%s,%d,%.2lf,%s,%d,%d\n", obecny->dane.gatunek, obecny->dane.dieta, obecny->dane.masa,
                 obecny->dane.zagroda, obecny->dane.temperament, obecny->dane.status_bezpieczenstwa);
         obecny = obecny->nastepny;
     }

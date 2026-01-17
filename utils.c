@@ -31,14 +31,13 @@ int pobieranie_opcji_usuwania() {
 }
 
 int pobieranie_opcji_menu() {
-    // w trakcie
     int opcja;
     int petla = 1;
     while (petla != 0) {
         if (scanf("%d", &opcja) == 1) {
             if (opcja >= 0 && opcja <= 9) {
                 return opcja;
-            } else {
+            } else{
                 printf("Błąd: Wybierz liczbę od 0 do 9!\n");
             }
         } else {
@@ -131,7 +130,7 @@ char *pobieranie_stringa_gatunek() {
         return NULL;
     }
     printf("Podaj nazwę: ");
-    scanf("%100s", napis);
+    scanf(" %100[^\n]", napis);
 
     return napis;
 }
@@ -139,7 +138,7 @@ char *pobieranie_stringa_gatunek() {
 double pobieranie_masy() {
     double masa;
     printf("podaj masę ");
-    while (scanf("%lf", &masa) != 1) {
+    while (scanf("%.2lf", &masa) != 1) {
         printf("podaj ponowonie liczbę");
         while (getchar() != '\n');
     };
@@ -153,7 +152,7 @@ char *pobieranie_stringa_zagroda() {
         return NULL;
     }
     printf("Podaj nazwę: ");
-    scanf("%40s", napis);
+    scanf(" %40[^\n]", napis);
 
     return napis;
 }
@@ -172,7 +171,8 @@ void wyswietl_menu() {
         "6: edytuj dinozaura\n"
         "7: posortuj dinozaury\n"
         "8: zapisz dinozaury do pliku\n"
-        "9: zakończ działanie programu\n");
+        "9: usuń wszystkie dane dinozaurow\n"
+        "10: zakończ działanie programu");
 }
 
 Dino pobierz_dane_dinozaur() {
