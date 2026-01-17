@@ -4,9 +4,9 @@
 #include "dino.h"
 
 
-void wczytaj_liste_plik(Node **glowa) {
-    FILE *plik = fopen("dane.csv", "r");
-    if (plik == NULL) {
+void wczytaj_liste_plik(Node **glowa,char plik[100]) {
+    FILE *otwarty_plik = fopen(plik, "r");
+    if (otwarty_plik == NULL) {
         printf("Plik się nie otworzył lub nie istnieje\n");
         return;
     }
@@ -17,7 +17,7 @@ void wczytaj_liste_plik(Node **glowa) {
     char zagroda[41];
     int temperament_int;
     int status_bezpieczenstwa_int;
-    while (fscanf(plik, " %100[^,],%d,%lf,%40[^,],%d,%d", gatunek, &dieta_int, &masa, zagroda, &temperament_int,
+    while (fscanf(otwarty_plik, " %100[^,],%d,%lf,%40[^,],%d,%d", gatunek, &dieta_int, &masa, zagroda, &temperament_int,
                   &status_bezpieczenstwa_int) == 6) {
         Dino dino;
         strcpy(dino.gatunek, gatunek);
@@ -29,22 +29,22 @@ void wczytaj_liste_plik(Node **glowa) {
         dodaj_dinozaura(glowa, dino);
     }
     printf("wczytano dane z pliku\n");
-    fclose(plik);
+    fclose(otwarty_plik);
 }
 
 
-void zapisz_liste(Node *glowa) {
-    FILE *plik = fopen("dane.csv", "w");
-    if (plik == NULL) {
+void zapisz_liste(Node *glowa,char plik[100]) {
+    FILE *otwarty_plik = fopen(plik, "w");
+    if (otwarty_plik == NULL) {
         printf("pliku nie można otworzzyć");
         return;
     }
     Node *obecny = glowa;
     while (obecny != NULL) {
-        fprintf(plik, "%s,%d,%.2lf,%s,%d,%d\n", obecny->dane.gatunek, obecny->dane.dieta, obecny->dane.masa,
+        fprintf(otwarty_plik, "%s,%d,%.2lf,%s,%d,%d\n", obecny->dane.gatunek, obecny->dane.dieta, obecny->dane.masa,
                 obecny->dane.zagroda, obecny->dane.temperament, obecny->dane.status_bezpieczenstwa);
         obecny = obecny->nastepny;
     }
     printf("zapisano dane do pliku \n");
-    fclose(plik);
+    fclose(otwarty_plik);
 }
