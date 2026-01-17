@@ -79,7 +79,7 @@ int pobieranie_enuma_temperament() {
 }
 
 char *pobieranie_stringa_gatunek() {
-    char *napis = malloc(101 * sizeof(char));
+    char *napis = malloc(100 * sizeof(char));
     if (napis == NULL) {
         printf("Błąd pamięci!\n");
     }
@@ -100,7 +100,7 @@ double pobieranie_masy() {
 }
 
 char *pobieranie_stringa_zagroda() {
-    char *napis = malloc(41 * sizeof(char));
+    char *napis = malloc(40 * sizeof(char));
     if (napis == NULL) {
         printf("Błąd pamięci!\n");
     }

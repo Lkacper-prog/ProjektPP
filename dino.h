@@ -46,5 +46,4 @@ void usun_dinozaury(Node **glowa);
 
 void zwolnij_liste(Node **glowa);
 
-void usun_dinozaury(Node **glowa);
 #endif
