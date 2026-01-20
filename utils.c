@@ -66,6 +66,41 @@ int pobieranie_opcji_wyszukaj_dinozaura() {
     }
 }
 
+int pobieranie_opcji_edycja() {
+    int opcja;
+    int petla = 1;
+    while (petla != 0) {
+        if (scanf("%d", &opcja) == 1) {
+            if (opcja >= 0 && opcja <= 3) {
+                return opcja;
+            } else {
+                printf("Blad: Wybierz liczbe od 0 do 3!\n");
+            }
+        } else {
+            printf("Blad: To nie jest liczba!\n");
+            while (getchar() != '\n');
+        }
+        printf("\n");
+    }
+}
+int pobieranie_opcji_sortowania() {
+    int opcja;
+    int petla = 1;
+    while (petla != 0) {
+        if (scanf("%d", &opcja) == 1) {
+            if (opcja >= 0 && opcja <= 1) {
+                return opcja;
+            } else {
+                printf("Blad: Wybierz liczbe od 0 do 1!\n");
+            }
+        } else {
+            printf("Blad: To nie jest liczba!\n");
+            while (getchar() != '\n');
+        }
+        printf("\n");
+    }
+}
+
 int pobieranie_enuma_dieta() {
     int opcja;
     int petla = 1;

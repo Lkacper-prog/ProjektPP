@@ -10,6 +10,10 @@ int pobieranie_enuma_temperament();
 
 int pobieranie_enuma_status_bezpieczenstwa();
 
+int pobieranie_opcji_sortowania();
+
+int pobieranie_opcji_edycja();
+
 char *pobieranie_stringa_gatunek();
 
 double pobieranie_masy();

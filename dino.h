@@ -47,9 +47,9 @@ void usun_dinozaury(Node **glowa);
 void zwolnij_liste(Node **glowa);
 
 
-void edytuj_dinozaura(Node **glowa);// do zrobienia
+void edytuj_dinozaura(Node **glowa);
 
-void sortuj_dinozaury(Node **glowa);// do zrobienia
+void sortuj_dinozaury(Node **glowa);
 
 void wyszukaj_dinozaury(Node *glowa);
 

@@ -7,7 +7,7 @@
 #include "utils.h"
 
 int main(int argc, char *argv[]) {
-    char plik[100];
+    char plik[99];
     if (argc == 1) {
         printf("Nie podano pliku, zapisywanie i odczyt od standardowego dane.csv\n");
         strcpy(plik , "dane.csv");
